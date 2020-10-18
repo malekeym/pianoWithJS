@@ -15,9 +15,7 @@ window.addEventListener('keydown' , function(e) {
 function removeTransition() {
     this.classList.remove('playing')
 }
-keys.forEach(key => {key.addEventListener('transitioned',removeTransition())
-});
+keys.forEach(key => key.addEventListener('transitionend' , removeTransition))
 hints.forEach(function(elm , index) {
-    // elm.style = `transition-delay : ${index * 50}ms`
     elm.setAttribute('style' , `transition-delay : ${index * 50}ms`)
 })
